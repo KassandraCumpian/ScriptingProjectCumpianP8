@@ -11,14 +11,15 @@ public class Inventory : MonoBehaviour
         public int rockets;
         public float fuel;
 
-        public Stuff(int bul, float fu)
+        public Stuff(int bul, int gre,int roc)
         {
             bullets = bul;
-            fuel = fu;
+            grenades = gre;
+            rockets = roc;
         }
 
         // Constructor
-        public Stuff()
+        public Stuff(int bul, float flu)
         {
             bullets = 1; 
             grenades = 1; 
@@ -29,6 +30,7 @@ public class Inventory : MonoBehaviour
 
     // Creating an Instance (an Object) of the Stuff class
     public Stuff myStuff = new Stuff(50, 5, 5);
+
     public Stuff myOtherStuff = new Stuff(50, 1.5f);
 
     void Start()

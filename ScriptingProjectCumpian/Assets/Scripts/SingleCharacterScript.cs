@@ -26,7 +26,7 @@ public class SingleCharacterScript : MonoBehaviour
     public float speed;
     public float turnSpeed;
     public Rigidbody bulletPrefab;
-    public Rigidbody firePosition;
+    public Transform firePosition;
     public float bulletSpeed;
 
 
@@ -37,7 +37,7 @@ public class SingleCharacterScript : MonoBehaviour
         Shoot();
     }
 
-    void Movement ()
+    void Movement()
     {
         float forwardMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         float turnMovement = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
@@ -50,7 +50,7 @@ public class SingleCharacterScript : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1") && myStuff.bullets > 0)
         {
-            Rigidbody bulletInsstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
+            Rigidbody bulletInstance = Instantiate(bulletPrefab, firePosition.position, firePosition.rotation) as Rigidbody;
             bulletInstance.AddForce(firePosition.forward * bulletSpeed);
             myStuff.bullets--;
         }
